@@ -1,0 +1,1 @@
+# task to read and analize otodom.csv
