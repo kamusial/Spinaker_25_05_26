@@ -10,16 +10,19 @@ y = np.array([np.sin(number) * np.exp(-0.05 * number) * random.uniform(0.5, 1.5)
 
 model = Sequential()
 model.add(Dense(1, input_dim=1, activation='linear'))
-model.add(Dense(5, activation='relu'))
-model.add(Dense(5, activation='relu'))
-model.add(Dense(5, activation='linear'))
+model.add(Dense(20, activation='relu'))
+model.add(Dense(20, activation='relu'))
+model.add(Dense(20, activation='sigmoid'))
+model.add(Dense(20, activation='linear'))
+model.add(Dense(20, activation='relu'))
+model.add(Dense(20, activation='linear'))
 model.add(Dense(1))
 model.compile(optimizer='adam', loss='mse')
 
 x_reshape = x.reshape(-1, 1)
 y_reshape = y.reshape(-1, 1)
 
-model.fit(x_reshape, y_reshape, epochs=100, verbose=2)
+model.fit(x_reshape, y_reshape, epochs=3000, verbose=2)
 
 y_pred = model.predict(x)
 plt.scatter(x, y)
