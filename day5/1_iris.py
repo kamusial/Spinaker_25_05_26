@@ -27,7 +27,7 @@ sns.scatterplot(data=df, x='petallength', y='petalwidth', hue='class')
 plt.scatter(5.2, 1.45, c='r')
 plt.show()
 
-X = df.iloc[:, :4]
+X = df.iloc[:, :2]
 y = df.class_value
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
@@ -49,6 +49,7 @@ model = DecisionTreeClassifier()
 model.fit(X_train, y_train)
 print(model.score(X_test, y_test))
 print(pd.DataFrame(confusion_matrix(y_test, model.predict(X_test))))
+
 from mlxtend.plotting import plot_decision_regions
 plot_decision_regions(X, y, model)
 plt.show()
