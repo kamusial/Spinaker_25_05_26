@@ -130,7 +130,7 @@ if 'style' in df.columns and False:
     plt.show()
 
 # Chart 5: Correlation matrix (if there are at least 2 numerical columns)
-if len(numeric_columns) >= 2 and False:
+if len(numeric_columns) >= 2:# and False:
     plt.figure(figsize=(8, 6))
     correlation_matrix = df[numeric_columns].corr()
     sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm')
